@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import NavBar from './components/NavBar';
+import Personajes from './views/Personajes';
+import Home from './views/Home';
+import Planets from './views/Planets';
+import Starships from './views/Starships';
+import Error404 from './views/error/404';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <div className="container">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/personajes" component={Personajes} />
+          <Route exact path="/planets" component={Planets} />
+          <Route exact path="/starships" component={Starships} />
+          <Route component={Error404} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
