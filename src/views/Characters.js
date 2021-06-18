@@ -1,9 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import Pagination from "react-js-pagination";
 import { AppContext } from "../store/appContext.js";
 
 function Characters() {
     const { store, actions } = useContext(AppContext);
+    const [page, setPage] = useState(1);
     const { people } = store;
+
+
+    const handleChangePage = pageNumber => {
+        setPage(pageNumber);
+        actions.getPeople(`https://www.swapi.tech/api/people/?page=${pageNumber}&limit=9`);
+    }
 
     return (
         <div className="container mb-5">
@@ -20,10 +28,25 @@ function Characters() {
                                 </div>
                             </div>
                         </div>
-                    ) : <h1>Loading</h1>
+                    ) : <h1 className="text-center">Loading...</h1>
                 }
             </div>
-            <br/>
+            <div className="col-md-12 d-flex justify-content-center py-5">
+                {
+                    !!people &&
+                        people.results.length > 0 ? (
+                        <Pagination
+                            activePage={page}
+                            itemsCountPerPage={9}
+                            totalItemsCount={people.total_records}
+                            onChange={handleChangePage}
+                            itemClass="page-item"
+                            linkClass="page-link"
+                        />
+                    ) : (" ")
+                }
+            </div>
+            <br />
         </div>
     );
 }

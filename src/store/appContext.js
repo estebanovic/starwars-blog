@@ -19,9 +19,9 @@ function ContextWrapper(PassedComponent) {
             })
         );
         useEffect(() => {
-            state.actions.getPeople('https://www.swapi.tech/api/people');
-            state.actions.getPLanets('https://www.swapi.tech/api/planets');
-            state.actions.getStarships('https://www.swapi.tech/api/starships');
+            state.actions.getPeople('https://www.swapi.tech/api/people?page=1&limit=9');
+            state.actions.getPLanets('https://www.swapi.tech/api/planets?page=1&limit=9');
+            state.actions.getStarships('https://www.swapi.tech/api/starships?page=1&limit=9');
         },[]);
 
         return (

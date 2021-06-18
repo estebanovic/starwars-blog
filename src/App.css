@@ -7,6 +7,22 @@ h1{
   font-family: starjedi, serif;
 }
 
+.page-link{
+  background-color: rgb(5, 5, 5);
+  color: rgb(231, 226, 182);
+}
+
+.page-item.active .page-link{
+  background-color: black;
+  color: rgb(231, 226, 182);
+  border-color: rgb(231, 226, 182);
+}
+
+.page-item.disabled .page-link{
+  background-color: rgb(10, 10, 10);
+  color: rgb(231, 226, 182);
+}
+
 .navbar{
   background-image: url('/src/imgs/stars.jpg');
 }
