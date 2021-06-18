@@ -1,8 +1,10 @@
 function Planets() {
 
     return (
-        <div className="row">
-            <h1>Planets</h1>
+        <div className="container">
+            <div className="row">
+            <h1 className="mt-5">Planets</h1>
+            </div>
         </div>
     );
 }

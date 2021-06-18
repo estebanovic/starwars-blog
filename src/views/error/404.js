@@ -1,8 +1,10 @@
 function Error404() {
 
     return (
-        <div className="row">
-            <h1 className="text-center">Page not found (ERROR: 404)</h1>
+        <div className="container">
+            <div className="row">
+                <h1 className="mt-5 text-center">Page not found (ERROR: 404)</h1>
+            </div>
         </div>
     );
 }
