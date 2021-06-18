@@ -1,3 +1,25 @@
+body{
+  background-color: black;
+}
+
+h1{
+  color: rgb(231, 226, 182);
+  font-family: starjedi, serif;
+}
+
+.navbar{
+  background-image: url('/src/imgs/stars.jpg');
+}
+
+.footer{
+  background-image: url('/src/imgs/stars.jpg');
+}
+
+.card{
+  background-image: url('/src/imgs/stars.jpg');
+  color: white;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +57,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: 'starjedi';
+  src: local('starjedi'), url(./fonts/Starjedi.ttf) format('truetype');
 }

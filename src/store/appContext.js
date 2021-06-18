@@ -20,6 +20,8 @@ function ContextWrapper(PassedComponent) {
         );
         useEffect(() => {
             state.actions.getPeople('https://www.swapi.tech/api/people');
+            state.actions.getPLanets('https://www.swapi.tech/api/planets');
+            state.actions.getStarships('https://www.swapi.tech/api/starships');
         },[]);
 
         return (

@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import '@fortawesome/fontawesome-free/css/all.css'
+import './App.css';
 import NavBar from './components/NavBar';
 import Characters from './views/Characters';
 import Home from './views/Home';

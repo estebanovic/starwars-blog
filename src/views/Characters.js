@@ -6,7 +6,7 @@ function Characters() {
     const { people } = store;
 
     return (
-        <div className="container">
+        <div className="container mb-5">
             <div className="row">
                 <h1 className="mt-5">Characters</h1>
                 {people !== null && people.results.length > 0 ?
@@ -14,14 +14,16 @@ function Characters() {
                         <div className="col-4" key={i}>
                             <div className="card my-3">
                                 <img src="https://via.placeholder.com/350x200" className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 class="card-title">{character.name}</h5>
+                                <div className="card-body d-flex flex-row justify-content-between">
+                                    <h5 className="card-title">{character.name}</h5>
+                                    <span href="#" className="btn btn-warning"><i class="fas fa-bookmark"></i></span>
                                 </div>
                             </div>
                         </div>
                     ) : <h1>Loading</h1>
                 }
             </div>
+            <br/>
         </div>
     );
 }
