@@ -25,7 +25,7 @@ const getState = ({ getStore, getACtions, setStore }) => {
                         })
                     });
             },
-            getPLanets: async (url) => {
+            getPlanets: async (url) => {
                 fetch(url, {
                     method: "GET",
                     headers: {
