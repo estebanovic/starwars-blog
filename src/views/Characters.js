@@ -11,7 +11,7 @@ function Characters() {
         <div className="container mb-5">
             <div className="row">
                 <h1 className="mt-5">Characters</h1>
-                <Cards objects={people} getData={actions.getPeople} view={"people"} />
+                <Cards objects={people} getData={actions.getPeople} setReadList={actions.setReadList} view={"people"} />
                 <br />
             </div>
         </div>

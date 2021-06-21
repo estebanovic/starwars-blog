@@ -19,7 +19,7 @@ function Cards(props) {
                                 <img src="https://via.placeholder.com/350x200" className="card-img-top" alt="..." />
                                 <div className="card-body d-flex flex-row justify-content-between">
                                     <h5 className="card-title">{object.name}</h5>
-                                    <span href="#" className="btn btn-warning"><i className="fas fa-bookmark"></i></span>
+                                    <span onClick={ () => props.setReadList(object)} href="#" className="btn btn-warning"><i className="fas fa-bookmark"></i></span>
                                 </div>
                             </div>
                         </div>

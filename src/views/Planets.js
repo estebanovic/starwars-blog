@@ -10,7 +10,7 @@ function Planets() {
         <div className="container mb-5">
             <div className="row">
                 <h1 className="mt-5">Planets</h1>
-                <Cards objects={planets} getData={actions.getPlanets} view={"planets"}/>
+                <Cards objects={planets} getData={actions.getPlanets} setReadList={actions.setReadList} view={"planets"}/>
                 <br />
             </div>
         </div>

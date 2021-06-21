@@ -4,6 +4,7 @@ const getState = ({ getStore, getACtions, setStore }) => {
             people: null,
             planets: null,
             starships: null,
+            readList: null,
             error: null
         },
         actions: {
@@ -60,6 +61,11 @@ const getState = ({ getStore, getACtions, setStore }) => {
                             error: error.message
                         })
                     });
+            },
+            setReadList : (object) => {
+                setStore({
+                    readList : object
+                })
             }
         }
     };
