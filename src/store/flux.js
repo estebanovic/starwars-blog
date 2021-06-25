@@ -17,7 +17,7 @@ const getState = ({ getStore, getACtions, setStore }) => {
                 }).then((response) => response.json())
                     .then((data) => {
                         setStore({
-                            people : data
+                            people: data
                         })
                     })
                     .catch((error) => {
@@ -35,7 +35,7 @@ const getState = ({ getStore, getACtions, setStore }) => {
                 }).then((response) => response.json())
                     .then((data) => {
                         setStore({
-                            planets : data
+                            planets: data
                         })
                     })
                     .catch((error) => {
@@ -53,7 +53,7 @@ const getState = ({ getStore, getACtions, setStore }) => {
                 }).then((response) => response.json())
                     .then((data) => {
                         setStore({
-                            starships : data
+                            starships: data
                         })
                     })
                     .catch((error) => {
@@ -62,10 +62,35 @@ const getState = ({ getStore, getACtions, setStore }) => {
                         })
                     });
             },
-            setReadList : (object) => {
-                setStore({
-                    readList : object
-                })
+            setReadList: (object, readList) => {
+                let aux = [];
+                if (readList !== null) {
+                    if(Array.isArray(readList)){
+                        if(!readList.includes(object)){
+                            readList.forEach(element => {
+                                aux.push(element);
+                            });
+                            aux.push(object);
+                        }else{
+                            aux = readList;
+                        }
+                    }else{
+                        if(object !== readList){
+                            aux.push(readList);
+                            aux.push(object);
+                        }else{
+                            aux = readList;
+                        }
+                    }
+                    setStore({
+                        readList: aux
+                    })
+                }else{
+                    setStore({
+                        readList: object
+                    })
+                }
+
             }
         }
     };

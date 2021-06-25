@@ -25,6 +25,11 @@ h1{
 
 .navbar{
   background-image: url('/src/imgs/stars.jpg');
+  font-size: large;
+}
+
+.dropdown-menu{
+  padding: 10px;
 }
 
 .footer{
@@ -43,6 +48,14 @@ h1{
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+a {
+ color: gray;
+}
+
+a:hover{
+  color: darkgray;
 }
 
 @media (prefers-reduced-motion: no-preference) {

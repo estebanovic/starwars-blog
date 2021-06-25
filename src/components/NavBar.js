@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import Logo from "../imgs/star-wars-logo.svg";
+import { useContext } from "react";
+import { AppContext } from "../store/appContext";
 
 function NavBar() {
+    const { store, actions } = useContext(AppContext);
+    const { readList } = store;
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
@@ -23,6 +27,21 @@ function NavBar() {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/starships">Starships</Link>
+                        </li>
+                    </ul>
+                    <ul className="navbar-nav ms-auto">
+                    <li className="nav-item dropdown ">
+                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                ReadList
+                            </a>
+                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                { readList !== null && Array.isArray(readList)?
+                                    readList.map((object, i) => 
+                                        <li key={i}>{object.name}</li>
+                                    ) : readList !== null ? <li>{readList.name}</li> :<li>vacio</li>
+                                }
+                                
+                            </ul>
                         </li>
                     </ul>
                 </div>

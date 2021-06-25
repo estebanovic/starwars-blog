@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { useState } from "react";
 import Pagination from "react-js-pagination";
+import { AppContext } from "../store/appContext";
 
 function Cards(props) {
+    const { store, actions } = useContext(AppContext);
+    const { readList } = store;
     const [page, setPage] = useState(1);
     const handleChangePage = pageNumber => {
         setPage(pageNumber);
@@ -19,7 +23,7 @@ function Cards(props) {
                                 <img src="https://via.placeholder.com/350x200" className="card-img-top" alt="..." />
                                 <div className="card-body d-flex flex-row justify-content-between">
                                     <h5 className="card-title">{object.name}</h5>
-                                    <span onClick={ () => props.setReadList(object)} href="#" className="btn btn-warning"><i className="fas fa-bookmark"></i></span>
+                                    <span onClick={ () => actions.setReadList(object, readList)} href="#" className="btn btn-warning"><i className="fas fa-bookmark"></i></span>
                                 </div>
                             </div>
                         </div>
