@@ -11,8 +11,10 @@ import Starships from './views/Starships';
 import Error404 from './views/error/404';
 import Footer from './components/Footer';
 import ContextWrapper from './store/appContext';
+import Info from './views/Info';
 
 function App() {
+
   return (
     <BrowserRouter>
       <NavBar />
@@ -21,6 +23,7 @@ function App() {
           <Route exact path="/characters" component={Characters} />
           <Route exact path="/planets" component={Planets} />
           <Route exact path="/starships" component={Starships} />
+          <Route exact path="/info/:type/:id" component={Info}/>
           <Route component={Error404} />
         </Switch>
         <Footer/>

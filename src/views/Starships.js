@@ -1,11 +1,10 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import Cards from "../components/Cards.js";
 import { AppContext } from "../store/appContext.js";
 
 function Starships() {
     const { store, actions } = useContext(AppContext);
     const { starships } = store;
-
 
     return (
         <div className="container mb-5">

@@ -5,6 +5,7 @@ const getState = ({ getStore, getACtions, setStore }) => {
             planets: null,
             starships: null,
             readList: null,
+            info: null,
             error: null
         },
         actions: {
@@ -109,6 +110,29 @@ const getState = ({ getStore, getACtions, setStore }) => {
                         readList: aux
                     })
                 }
+            },
+            getInfo:  async (url) => {
+                fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).then((response) => response.json())
+                    .then((data) => {
+                        setStore({
+                            info: data.result
+                        })
+                    })
+                    .catch((error) => {
+                        setStore({
+                            error: error.message
+                        })
+                    });
+            },
+            clearInfo: () => {
+                setStore({
+                    info: null
+                })
             }
         }
     };
