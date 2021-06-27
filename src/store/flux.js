@@ -91,6 +91,24 @@ const getState = ({ getStore, getACtions, setStore }) => {
                     })
                 }
 
+            },
+            removeReadList : (object, readList) =>{
+                if(!Array.isArray(readList)){
+                    setStore({
+                        readList: null
+                    })
+                } else if(readList.length === 1){
+                    setStore({
+                        readList: null
+                    })
+                }else{
+                    let aux = readList;
+                    let position = readList.indexOf(object);
+                    aux.splice(position,1);
+                    setStore({
+                        readList: aux
+                    })
+                }
             }
         }
     };

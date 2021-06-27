@@ -31,14 +31,20 @@ function NavBar() {
                     </ul>
                     <ul className="navbar-nav ms-auto">
                     <li className="nav-item dropdown ">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                                 ReadList
                             </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
                                 { readList !== null && Array.isArray(readList)?
+                                    //lista con mas de un dato
                                     readList.map((object, i) => 
-                                        <li key={i}>{object.name}</li>
-                                    ) : readList !== null ? <li>{readList.name}</li> :<li>vacio</li>
+                                        <li key={i}><div className="d-flex justify-content-between m-2"><span>{object.name}</span><i className="fas fa-times p-2" onClick={ () => actions.removeReadList(object, readList)}></i></div></li> ) 
+                                        : 
+                                    //lista con un dato
+                                    readList !== null ? <li><div className="d-flex justify-content-between m-2"><span>{readList.name}</span><i className="fas fa-times p-2" onClick={ () => actions.removeReadList()}></i></div></li> 
+                                        :
+                                    //lista vacia
+                                    <li><div className="d-flex justify-content-between m-2"><span>vacío</span></div></li>
                                 }
                                 
                             </ul>
