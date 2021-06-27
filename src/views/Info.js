@@ -16,12 +16,12 @@ function Info(props) {
                     <div>
                         <h1 className="mt-5">{store.info.properties.name}</h1> 
                         <br/>
-                        {store.info.properties.mass ? <h3>Mass: {store.info.properties.mass}</h3> : ""}
                         {store.info.properties.birth_year ? <h3>Birth year: {store.info.properties.birth_year}</h3> : ""}
                         {store.info.properties.gender ? <h3>Gender: {store.info.properties.gender}</h3>  : ""}
                         {store.info.properties.hair_color ? <h3>Hair Color: {store.info.properties.hair_color}</h3> : ""}
                         {store.info.properties.skin_color ? <h3>Skin color: {store.info.properties.skin_color}</h3> : ""}
                         {store.info.properties.eye_color ? <h3>Eye color: {store.info.properties.eye_color}</h3> : ""}
+                        {store.info.properties.mass ? <h3>Mass: {store.info.properties.mass}</h3> : ""}
                         {store.info.properties.manufacturer ? <h3>Manufacturer: {store.info.properties.manufacturer}</h3> : ""}
                         {store.info.properties.length ? <h3>Length: {store.info.properties.length}</h3> : ""}
                         {store.info.properties.passengers ? <h3>Passengers: {store.info.properties.passengers}</h3>  : ""}
@@ -29,7 +29,6 @@ function Info(props) {
                         {store.info.properties.max_atmosphering_speed ? <h3>Max atmosphering speed: {store.info.properties.max_atmosphering_speed}</h3> : ""}
                         {store.info.properties.cargo_capacity ? <h3>Cargo capacity: {store.info.properties.cargo_capacity}</h3> : ""}
                         {store.info.properties.consumables ? <h3>Consumables: {store.info.properties.consumables}</h3> : ""}
-                        {store.info.properties.skin_color ? <h3>Speed(mglt): {store.info.properties.skin_color}</h3> : ""}
                         {store.info.properties.cost_in_credits ? <h3>Price: {store.info.properties.cost_in_credits}</h3> : ""}
                         {store.info.properties.climate ? <h3>Climate: {store.info.properties.climate}</h3> : ""}
                         {store.info.properties.terrain ? <h3>Terrain: {store.info.properties.terrain}</h3> : ""}
@@ -41,7 +40,7 @@ function Info(props) {
 
                     </div>
                     :
-                    <h1 className="text-center">Loading...</h1>
+                    <h1 className="text-center mt-5">Loading...</h1>
                 }
             </div>
         </div>
