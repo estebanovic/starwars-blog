@@ -12,6 +12,8 @@ import Error404 from './views/error/404';
 import Footer from './components/Footer';
 import ContextWrapper from './store/appContext';
 import Info from './views/Info';
+import Species from './views/Species';
+import Vehicles from './views/Vehicles';
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
           <Route exact path="/characters" component={Characters} />
           <Route exact path="/planets" component={Planets} />
           <Route exact path="/starships" component={Starships} />
+          <Route exact path="/species" component={Species} />
+          <Route exact path="/vehicles" component={Vehicles} />
           <Route exact path="/info/:type/:id" component={Info}/>
           <Route component={Error404} />
         </Switch>

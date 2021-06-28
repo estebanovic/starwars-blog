@@ -7,12 +7,6 @@ import { AppContext } from "../store/appContext";
 function HomeCards(props) {
     const { store, actions } = useContext(AppContext);
     const { readList } = store;
-    const [page, setPage] = useState(1);
-    const handleChangePage = pageNumber => {
-        setPage(pageNumber);
-        props.getData(`https://www.swapi.tech/api/${props.view}/?page=${pageNumber}&limit=9`);
-    }
-
 
     return (
         <>

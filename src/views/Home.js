@@ -5,25 +5,40 @@ import { AppContext } from "../store/appContext";
 
 function Home() {
     const { store, actions } = useContext(AppContext);
-    const { people, planets, starships } = store;
+    const { people, planets, starships, species, vehicles } = store;
 
     return (
         <div className="container mb-5">
             <div className="row">
                 <div>
                     <h1 className="mt-5">Characters</h1>
-                    <HomeCards objects={people} getData={actions.getPeople} setReadList={actions.setReadList} view={"planets"} />
+                    <HomeCards objects={people}/>
                     <Link to="/characters"><h3>More</h3></Link>
+                    <br/>
                 </div>
                 <div>
                     <h1 className="mt-5">Planets</h1>
-                    <HomeCards objects={planets} getData={actions.getPlanets} setReadList={actions.setReadList} view={"planets"} />
+                    <HomeCards objects={planets}/>
                     <Link to="/planets"><h3>More</h3></Link>
+                    <br/>
                 </div>
                 <div>
                     <h1 className="mt-5">Starships</h1>
-                    <HomeCards objects={starships} getData={actions.getStarships} setReadList={actions.setReadList} view={"planets"} />
+                    <HomeCards objects={starships}/>
                     <Link to="/starships"><h3>More</h3></Link>
+                    <br/>
+                </div>
+                <div>
+                    <h1 className="mt-5">vehicles</h1>
+                    <HomeCards objects={vehicles}/>
+                    <Link to="/starships"><h3>More</h3></Link>
+                    <br/>
+                </div>
+                <div>
+                    <h1 className="mt-5">Species</h1>
+                    <HomeCards objects={species}/>
+                    <Link to="/starships"><h3>More</h3></Link>
+                    <br/>
                 </div>
             </div>
             <br />

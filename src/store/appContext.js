@@ -22,6 +22,8 @@ function ContextWrapper(PassedComponent) {
             state.actions.getPeople('https://www.swapi.tech/api/people?page=1&limit=9');
             state.actions.getPlanets('https://www.swapi.tech/api/planets?page=1&limit=9');
             state.actions.getStarships('https://www.swapi.tech/api/starships?page=1&limit=9');
+            state.actions.getSpecies('https://www.swapi.tech/api/species?page=1&limit=9');
+            state.actions.getVehicles('https://www.swapi.tech/api/vehicles?page=1&limit=9');
         },[]);
 
         return (

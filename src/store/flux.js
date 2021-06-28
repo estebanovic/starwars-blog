@@ -4,6 +4,8 @@ const getState = ({ getStore, getACtions, setStore }) => {
             people: null,
             planets: null,
             starships: null,
+            species: null,
+            vehicles: null,
             readList: null,
             info: null,
             error: null
@@ -55,6 +57,42 @@ const getState = ({ getStore, getACtions, setStore }) => {
                     .then((data) => {
                         setStore({
                             starships: data
+                        })
+                    })
+                    .catch((error) => {
+                        setStore({
+                            error: error.message
+                        })
+                    });
+            },
+            getSpecies: async (url) => {
+                fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).then((response) => response.json())
+                    .then((data) => {
+                        setStore({
+                            species: data
+                        })
+                    })
+                    .catch((error) => {
+                        setStore({
+                            error: error.message
+                        })
+                    });
+            },
+            getVehicles: async (url) => {
+                fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).then((response) => response.json())
+                    .then((data) => {
+                        setStore({
+                            vehicles: data
                         })
                     })
                     .catch((error) => {

@@ -21,7 +21,7 @@ function Cards(props) {
                     props.objects.results.map((object, i) =>
                         <div className="col-4" key={i}>
                             <div className="card my-3">
-                                <img src="https://via.placeholder.com/350x200" className="card-img-top" alt="..." />
+                                <img src={'../imgs/characters/luke-skywalker.jpg'} className="card-img-top" alt="..." />
                                 <div className="card-body d-flex flex-row justify-content-between">
                                     <h5 className="card-title"><Link to={"/info"+object.url.slice(26,)}>{object.name}</Link></h5>
                                     <span onClick={ () => actions.setReadList(object, readList)} href="#" className="btn btn-warning">
