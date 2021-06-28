@@ -12,6 +12,9 @@ function Cards(props) {
         setPage(pageNumber);
         props.getData(`https://www.swapi.tech/api/${props.view}/?page=${pageNumber}&limit=9`);
     }
+    const getImgName = name => {
+        return name.toLowerCase().split(" ").join("-") + ".jpg";
+    }
 
     
     return (
@@ -21,7 +24,7 @@ function Cards(props) {
                     props.objects.results.map((object, i) =>
                         <div className="col-4" key={i}>
                             <div className="card my-3">
-                                <img src={'../imgs/characters/luke-skywalker.jpg'} className="card-img-top" alt="..." />
+                                <Link to={"/info"+object.url.slice(26,)}><img src={`/img/${props.view}/${getImgName(object.name)}`} onError={(e)=>{e.target.onerror = null; e.target.src="https://via.placeholder.com/250x150"}} className="card-img-top" alt="..." height={"250px"}/></Link>
                                 <div className="card-body d-flex flex-row justify-content-between">
                                     <h5 className="card-title"><Link to={"/info"+object.url.slice(26,)}>{object.name}</Link></h5>
                                     <span onClick={ () => actions.setReadList(object, readList)} href="#" className="btn btn-warning">

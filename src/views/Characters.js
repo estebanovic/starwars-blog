@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Cards from "../components/Cards.js";
 import { AppContext } from "../store/appContext.js";
 
@@ -6,6 +6,9 @@ function Characters() {
     const { store, actions } = useContext(AppContext);
     const { people } = store;
 
+    useEffect(() => {
+        return () => actions.getPeople(`https://www.swapi.tech/api/people/?page=1&limit=9`);
+    },[])
 
     return (
         <div className="container mb-5">

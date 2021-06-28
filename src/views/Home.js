@@ -12,31 +12,31 @@ function Home() {
             <div className="row">
                 <div>
                     <h1 className="mt-5">Characters</h1>
-                    <HomeCards objects={people}/>
+                    <HomeCards objects={people} view="people"/>
                     <Link to="/characters"><h3>More</h3></Link>
                     <br/>
                 </div>
                 <div>
                     <h1 className="mt-5">Planets</h1>
-                    <HomeCards objects={planets}/>
+                    <HomeCards objects={planets} view="planets"/>
                     <Link to="/planets"><h3>More</h3></Link>
                     <br/>
                 </div>
                 <div>
                     <h1 className="mt-5">Starships</h1>
-                    <HomeCards objects={starships}/>
+                    <HomeCards objects={starships} view="starships"/>
                     <Link to="/starships"><h3>More</h3></Link>
                     <br/>
                 </div>
                 <div>
                     <h1 className="mt-5">vehicles</h1>
-                    <HomeCards objects={vehicles}/>
+                    <HomeCards objects={vehicles} view="vehicles"/>
                     <Link to="/starships"><h3>More</h3></Link>
                     <br/>
                 </div>
                 <div>
                     <h1 className="mt-5">Species</h1>
-                    <HomeCards objects={species}/>
+                    <HomeCards objects={species} view="species"/>
                     <Link to="/starships"><h3>More</h3></Link>
                     <br/>
                 </div>

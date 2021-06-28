@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Logo from "../imgs/star-wars-logo.svg";
 import { useContext } from "react";
 import { AppContext } from "../store/appContext";
 
@@ -10,7 +9,7 @@ function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="container justify-content-center">
-                <Link className="navbar-brand" to="/"><img src={Logo} alt="" width="40" className="d-inline-block align-text-top"></img></Link>
+                <Link className="navbar-brand" to="/"><img src={`/img/star-wars-logo.svg`} alt="" width="40" className="d-inline-block align-text-top"></img></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

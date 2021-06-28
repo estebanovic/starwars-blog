@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import { useState } from "react";
-import Pagination from "react-js-pagination";
 import { Link } from "react-router-dom";
 import { AppContext } from "../store/appContext";
 
 function HomeCards(props) {
     const { store, actions } = useContext(AppContext);
     const { readList } = store;
+    const getImgName = name => {
+        return name.toLowerCase().split(" ").join("-") + ".jpg";
+    }
 
     return (
         <>
@@ -16,7 +17,7 @@ function HomeCards(props) {
                     <div className="row">
                         <div className="col-4">
                             <div className="card my-3">
-                                <img src="https://via.placeholder.com/350x200" className="card-img-top" alt="..." />
+                            <Link to={"/info"+props.objects.results[0].url.slice(26,)}><img src={`/img/${props.view}/${getImgName(props.objects.results[0].name)}`} onError={(e)=>{e.target.onerror = null; e.target.src="https://via.placeholder.com/250x150"}} className="card-img-top" alt="..." height={"250px"}/></Link>
                                 <div className="card-body d-flex flex-row justify-content-between">
                                     <h5 className="card-title"><Link to={"/info" + props.objects.results[0].url.slice(26,)}>{props.objects.results[0].name}</Link></h5>
                                     <span onClick={() => actions.setReadList(props.objects.results[0], readList)} href="#" className="btn btn-warning">
@@ -27,7 +28,7 @@ function HomeCards(props) {
                         </div>
                         <div className="col-4">
                             <div className="card my-3">
-                                <img src="https://via.placeholder.com/350x200" className="card-img-top" alt="..." />
+                            <Link to={"/info"+props.objects.results[1].url.slice(26,)}><img src={`/img/${props.view}/${getImgName(props.objects.results[1].name)}`} onError={(e)=>{e.target.onerror = null; e.target.src="https://via.placeholder.com/250x150"}} className="card-img-top" alt="..." height={"250px"}/></Link>
                                 <div className="card-body d-flex flex-row justify-content-between">
                                     <h5 className="card-title"><Link to={"/info" + props.objects.results[1].url.slice(26,)}>{props.objects.results[1].name}</Link></h5>
                                     <span onClick={() => actions.setReadList(props.objects.results[1], readList)} href="#" className="btn btn-warning">
@@ -38,7 +39,7 @@ function HomeCards(props) {
                         </div>
                         <div className="col-4">
                             <div className="card my-3">
-                                <img src="https://via.placeholder.com/350x200" className="card-img-top" alt="..." />
+                            <Link to={"/info"+props.objects.results[2].url.slice(26,)}><img src={`/img/${props.view}/${getImgName(props.objects.results[2].name)}`} onError={(e)=>{e.target.onerror = null; e.target.src="https://via.placeholder.com/250x150"}} className="card-img-top" alt="..." height={"250px"}/></Link>
                                 <div className="card-body d-flex flex-row justify-content-between">
                                     <h5 className="card-title"><Link to={"/info" + props.objects.results[2].url.slice(26,)}>{props.objects.results[2].name}</Link></h5>
                                     <span onClick={() => actions.setReadList(props.objects.results[2], readList)} href="#" className="btn btn-warning">
