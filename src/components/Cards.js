@@ -24,7 +24,9 @@ function Cards(props) {
                                 <img src="https://via.placeholder.com/350x200" className="card-img-top" alt="..." />
                                 <div className="card-body d-flex flex-row justify-content-between">
                                     <h5 className="card-title"><Link to={"/info"+object.url.slice(26,)}>{object.name}</Link></h5>
-                                    <span onClick={ () => actions.setReadList(object, readList)} href="#" className="btn btn-warning"><i className="fas fa-bookmark"></i></span>
+                                    <span onClick={ () => actions.setReadList(object, readList)} href="#" className="btn btn-warning">
+                                        <i className="fas fa-bookmark"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
