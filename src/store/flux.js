@@ -6,7 +6,7 @@ const getState = ({ getStore, getACtions, setStore }) => {
             starships: null,
             species: null,
             vehicles: null,
-            readList: null,
+            readList: [],
             info: null,
             error: null
         },
@@ -101,53 +101,23 @@ const getState = ({ getStore, getACtions, setStore }) => {
                         })
                     });
             },
-            setReadList: (object, readList) => {
-                let aux = [];
-                if (readList !== null) {
-                    if(Array.isArray(readList)){
-                        if(!readList.includes(object)){
-                            readList.forEach(element => {
-                                aux.push(element);
-                            });
-                            aux.push(object);
-                        }else{
-                            aux = readList;
-                        }
-                    }else{
-                        if(object !== readList){
-                            aux.push(readList);
-                            aux.push(object);
-                        }else{
-                            aux = readList;
-                        }
-                    }
-                    setStore({
-                        readList: aux
-                    })
-                }else{
-                    setStore({
-                        readList: object
-                    })
-                }
+            setReadList: (object) => {
+                let aux = getStore().readList;
+                aux.push(object);
+                setStore({
+                    readList: aux
+                })
 
             },
-            removeReadList : (object, readList) =>{
-                if(!Array.isArray(readList)){
-                    setStore({
-                        readList: null
-                    })
-                } else if(readList.length === 1){
-                    setStore({
-                        readList: null
-                    })
-                }else{
-                    let aux = readList;
-                    let position = readList.indexOf(object);
-                    aux.splice(position,1);
-                    setStore({
-                        readList: aux
-                    })
-                }
+            removeReadList: (object) => {
+
+                let aux = getStore().readList;
+                let position = aux.indexOf(object);
+                console.log(position);
+                aux.splice(position, 1);
+                setStore({
+                    readList: aux
+                })
             },
             getInfo:  async (url) => {
                 fetch(url, {

@@ -37,14 +37,11 @@ function NavBar() {
                                 ReadList
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
-                                { readList !== null && Array.isArray(readList)?
+                                { readList.length > 0?
                                     //lista con mas de un dato
                                     readList.map((object, i) => 
-                                        <li key={i}><div className="d-flex justify-content-between m-2"><span><Link to={"/info"+object.url.slice(26,)}>{object.name}</Link></span><i className="fas fa-times p-2" onClick={ () => actions.removeReadList(object, readList)}></i></div></li> ) 
+                                        <li key={i}><div className="d-flex justify-content-between m-2"><span><Link to={"/info"+object.url.slice(26,)}>{object.name}</Link></span><i className="fas fa-times p-2" onClick={ () => actions.removeReadList(object)}></i></div></li> ) 
                                         : 
-                                    //lista con un dato
-                                    readList !== null ? <li><div className="d-flex justify-content-between m-2"><span><Link to={"/info"+readList.url.slice(26,)}>{readList.name}</Link></span><i className="fas fa-times p-2" onClick={ () => actions.removeReadList()}></i></div></li> 
-                                        :
                                     //lista vacia
                                     <li><div className="d-flex justify-content-between m-2"><span>vacío</span></div></li>
                                 }
